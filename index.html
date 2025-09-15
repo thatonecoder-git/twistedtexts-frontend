@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test Frontend</title>
+
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+
+    <body>
+
+        <div class="div-game">
+
+            <div class="div-top">
+
+                <div class="div-share">
+                    <img class="img-share" src="resources/images/share_btn.png" alt="Share!" title="Share">
+                </div>
+
+                <div class="div-stats">
+                    <p class="txt-score">Score: 0</p>
+                    <p class="txt-timer">Timer: 0</p>
+                </div>
+
+                <div class="div-links">
+                    <a href="https://www.youtube.com/@ThatOneCoderYT" target="_blank"><img class="img-link" src="resources/images/youtube_icon.webp" alt="YouTube @ThatOneCoder"></a>
+                    <a href="https://thatonecoderdev.itch.io/" target="_blank"><img class="img-link" src="resources/images/itch_icon.png" alt="YouTube @ThatOneCoder"></a>
+                </div>
+
+            </div>
+
+            <div class="div-above-middle">
+                <p class="txt-title">TWISTED TEXTS</p>
+            </div>
+
+            <div class="div-middle">
+
+                <div class="div-scrambled">
+                    <p class="txt-scrambled-sentence default-text">loading sentence...</p>
+                </div>
+
+                <div class="div-original">
+                    <p class="txt-original-sentence default-text"></p>
+                </div>
+
+                <div class="div-guess">
+                    <input class="input-guess default-text" placeholder="Unscramble the sentence">
+                </div>
+
+            </div>
+
+            <div class="div-below-middle">
+
+                <div class="div-continue">
+                    <button class="btn-continue">Next Sentence</button>
+                </div>
+
+            </div>
+
+            <div class="div-bottom">
+                <div class="div-highscore">
+                    <p class="txt-highscore">Highscore: ...</p>
+                </div>
+
+                <div class="div-credits">
+                    <a href="https://www.youtube.com/@ThatOneCoderYT" target="_blank" class="a-credit">@ThatOneCoder</a>
+                </div>
+
+                <div class="div-help">
+                    <div class="div-help-tooltip">
+                        <ul class="ul-help">
+                            <li>Full-Stop Word = Last Word</li>
+                            <li>Capital Word = First Word (Mostly)</li>
+                            <li>Accurate Punctuations &amp; Capitals = More Score</li>
+                            <li>Less Time = More Score</li>
+                            <li>Long Text = Visible Full-Stop &amp; Capitals</li>
+                            <li>Short Text = Unknown Full-Stop &amp; Capitals</li>
+                            <li>Share With Friends = Good</li>
+                        </ul>
+                    </div>
+
+                    Help
+                </div>
+            </div>
+
+        </div>
+        
+        <script type="module" src="scripts/index.js"></script>
+        <script type="module" src="scripts/gameplay.js"></script>
+    </body>
+</html>
