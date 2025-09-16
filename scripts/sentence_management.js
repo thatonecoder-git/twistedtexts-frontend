@@ -2,20 +2,17 @@ import { chooseRandom, waitForArray } from "./tools.js";
 import { getSentencesList } from "./data.js";
 import { elements } from "./elements_manager.js";
 import { scrambled_sentence } from "./gameplay.js"
-//import { sentencesList } from "./index.js";
-//import { storageKeys, sentencesList, waitingDone, sentence, sentenceVisible, sentenceElement, scrambledSentence } from "./index.js";
 
-let waitingDone = false;
+export let waitingDone = false;
 let sentencesList = [];
 let currentSentence = '';
 sentencesList = await getSentencesList(false);
-sentencesList = await getSentencesList(true);
 
 export function getSentences() { return sentencesList };
 
 export async function getRandomSentence_async() {
-    if (!waitingDone) {
-        await waitForArray(sentencesList);
+    if (!waitingDone && !sentencesList) {
+        sentencesList = await getSentencesList(true);
         waitingDone = true;
     }
 

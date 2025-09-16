@@ -41,13 +41,9 @@ export function copyToClipboard(text) {
     navigator.clipboard.writeText(text)
         .then(() => {
         console.log('Text successfully copied to clipboard');
-        // Optionally, provide user feedback, e.g., an alert or a temporary message
-        // alert('Text copied!'); 
         })
         .catch(err => {
         console.error('Failed to copy text: ', err);
-        // Optionally, handle the error gracefully, e.g., display an error message
-        // alert('Failed to copy text. Please try again.');
         });
 }
 

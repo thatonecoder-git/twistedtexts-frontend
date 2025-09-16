@@ -1,7 +1,7 @@
 // Import Modules
 import { elements } from "./elements_manager.js";
 import { addScore, getScore } from "./score_management.js";
-import { getRandomSentence_async, getSentenceByDifficulty, getWithoutSymbols, scrambleSentence, setOriginalSentenceVisibility, getCurrentSentence, setCurrentSentence, allLowerCase, getCurrentScrambledSentence, trimEach} from "./sentence_management.js";
+import { getRandomSentence_async, getSentenceByDifficulty, getWithoutSymbols, scrambleSentence, setOriginalSentenceVisibility, getCurrentSentence, setCurrentSentence, allLowerCase, getCurrentScrambledSentence, trimEach, waitingDone} from "./sentence_management.js";
 import { copyToClipboard, shareInfo } from "./tools.js";
 
 // Creating Variables
@@ -31,7 +31,7 @@ function startTimer() {
 
 async function showNextScrambledSentence_async() {
     elements.input.guess.value = "";
-    elements.txt.scrambled_sentence.innerText = "Server is down, please wait or try again later...";
+    elements.txt.scrambled_sentence.innerText = waitingDone ? "Server is down, please wait or try again later..." : "loading sentence...";
     
     setCurrentSentence(await getRandomSentence_async());
     

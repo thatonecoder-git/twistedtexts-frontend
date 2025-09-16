@@ -1,16 +1,4 @@
 :root {
-    /*--primary-color: #ffaa00;
-    --secondary-color: #0088ff;
-    
-    --primary-color-light: #fffaf0;
-    --secondary-color-light: #f3f9ff;
-    
-    --primary-color-dark: #8d4900;
-    --secondary-color-dark: #003b6f;
-
-    --primary-color-glow: rgba(255, 150, 0, 0.5);
-    --secondary-color-glow: rgba(0, 145, 255, 0.5);*/
-
     --background-color: rgb(32, 32, 32);
     --foreground-color: rgb(235, 235, 235);
 
@@ -34,10 +22,6 @@
     font-family: 'Trebuchet MS';
     font-size: calc(27px * var(--global-scale));
     color: var(--foreground-color);
-}
-
-div {
-    /*border-style: solid;*/
 }
 
 .default-text {
@@ -64,14 +48,11 @@ div {
         justify-content: space-between;
         align-items: center;
         
-        margin-top: calc(15px * var(--global-scale));
         transition: 0.5s;
     }
         .div-share {
             width: calc(90px * var(--global-scale));
             height: calc(90px * var(--global-scale));
-            margin-left: calc(15px * var(--global-scale));
-            margin-top: calc(15px * var(--global-scale));
         }
 
         .img-share {
@@ -94,13 +75,13 @@ div {
         }
 
         .div-stats {
-            margin-top: calc(15px * var(--global-scale));
         }
 
         .txt-score {
             color: var(--red-light);
             text-align: center;
             font-size: calc(30px * var(--global-scale));
+            color: var(--red-wrong);
         }
         .txt-timer {
             color: var(--blue-light);
@@ -117,7 +98,6 @@ div {
 
             height: calc(60px * var(--global-scale));
             margin-right: calc(15px * var(--global-scale));
-            margin-top: calc(15px * var(--global-scale));
         }
 
             .img-link {
@@ -178,7 +158,6 @@ div {
         }
             .txt-scrambled-sentence {
                 color: var(--red-wrong);
-                /*text-shadow: 0 0 3px var(--red-wrong);*/
             }
 
             .txt-scrambled-sentence-used {
@@ -251,8 +230,6 @@ div {
 
             width: 45vw;
             justify-content: center;
-
-            /*margin-bottom: 75px;*/
         }
             .btn-continue {
                 width: 90%;
@@ -289,27 +266,39 @@ div {
     .div-bottom {
         display: flex;
         flex-direction: row;
+        flex: 0.2;
         justify-content: space-between;
         padding: 0px calc(20px * var(--global-scale));
 
         align-items: center;
         
         transition: 0.5s;
-        /*margin-bottom: calc(15px * var(--font-scale));*/
     }   
         .a-credit {
             font-size: calc(18px  * var(--global-scale));
             text-align: center;
+            color: var(--blue-dark);
+            transition: 0.25s;
+        }
+
+        .a-credit:hover {
+            color: var(--blue-light);
+        }
+        
+        .a-credit:active {
+            color: var(--foreground-color);
         }
 
         .txt-highscore {
             font-size: calc(18px  * var(--global-scale));
+            color: var(--red-wrong);
         }
 
         .div-help {
             position: relative;
             cursor: pointer;
             font-size: calc(18px  * var(--global-scale));
+            color: var(--red-wrong);
         }
             .div-help-tooltip {
                 position: absolute;
@@ -322,8 +311,8 @@ div {
                 border-radius: calc(10px * var(--global-scale));
                 bottom: calc(30px * var(--global-scale));
                 right: 0px;
-                background-color: rgba(0, 166, 255, 0.3);
-                scale: 0.9;
+                background-color: rgba(255, 191, 0, 0.3);
+                scale: 1.05;
                 opacity: 0;
                 transition: 0.25s;
             }
