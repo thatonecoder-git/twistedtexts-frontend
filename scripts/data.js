@@ -1,4 +1,4 @@
-const fetchAddr = "https://gnftest001-backend.onrender.com/toc128_api/get_sentences_list";
+const fetchAddr = "https://twistedtexts-backend-toc128.onrender.com/toc128_api/get_sentences_list";
 const fetchAddrTest = "http://127.0.0.1:10000/toc128_api/get_sentences_list/";
 
 export const FETCH_ADDR = fetchAddr; // Change this according to build.
