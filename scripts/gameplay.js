@@ -1,7 +1,7 @@
 // Import Modules
 import { audio } from "./audio_manager.js";
 import { elements } from "./elements_manager.js";
-import { addScore, getScore } from "./score_management.js";
+import { addScore, getHighScore, getScore } from "./score_management.js";
 import { getRandomSentence_async, getSentenceByDifficulty, getWithoutSymbols, scrambleSentence, setOriginalSentenceVisibility, getCurrentSentence, setCurrentSentence, allLowerCase, getCurrentScrambledSentence, trimEach, waitingDone} from "./sentence_management.js";
 import { copyToClipboard, shareInfo } from "./tools.js";
 
@@ -123,8 +123,8 @@ function checkSentence() {
 
 function share() {
     const message = sentenceRevealed ?
-        `I just unscrambled "${getCurrentSentence()}" in ${timeTaken.toFixed(2)} seconds! (on twistedtext.onrender.com)\nBTW, my score is ${getScore()}!\nTry it out, it's really fun! I guess...` :
-        `I'm unscrambling "${getCurrentScrambledSentence()}" on twistedtext.onrender.com\nBTW, my score is ${getScore()}!\nTry it out, it's really fun! I guess...`;
+        `I just unscrambled "${getCurrentSentence()}" in ${timeTaken.toFixed(2)} seconds! (on twistedtext.onrender.com)\nBTW, my score is ${getHighScore()}!\nTry it out, it's really fun! I guess...` :
+        `I'm unscrambling "${getCurrentScrambledSentence()}" on twistedtext.onrender.com\nBTW, my score is ${getHighScore()}!\nTry it out, it's really fun! I guess...`;
 
     !shareInfo(message) ?
         alert("Unable to share.\nMessage copied to clipboard, thanks for sharing!") : null;
