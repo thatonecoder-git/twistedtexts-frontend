@@ -374,13 +374,17 @@
     }
 
     .div-bottom {
-        bottom: calc(30px / var(--global-scale));
+        bottom: calc(50px / var(--global-scale));
     }
 }
 
 @media (min-width: 600px) and (max-width: 1024px) {
     :root {
         --global-scale: 0.85;
+    }
+    
+    .div-bottom {
+        bottom: calc(30px / var(--global-scale));
     }
 }
 
