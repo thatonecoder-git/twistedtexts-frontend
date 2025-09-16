@@ -339,24 +339,18 @@ div {
 
 @media (max-width: 600px) {
     :root {
-        --red-wrong: rgb(86, 255, 117);
         --global-scale: 0.65;
-    }
-
-    .btn-continue {
     }
 }
 
 @media (min-width: 600px) and (max-width: 1024px) {
     :root {
-        --red-wrong: rgb(86, 100, 255);
         --global-scale: 0.85;
     }
 }
 
 @media (min-width: 1024px) {
     :root {
-        --red-wrong: rgb(255, 86, 216);
         --global-scale: 1;
     }
 }
