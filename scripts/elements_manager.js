@@ -19,7 +19,9 @@ elements.txt.highscore = document.querySelector(".txt-highscore");
 elements.div.top = document.querySelector(".div-top");
 elements.div.above_middle = document.querySelector(".div-above-middle");
 elements.div.bottom = document.querySelector(".div-bottom");
+elements.div.scrambled = document.querySelector(".div-scrambled");
 
 elements.div.top.classList.remove("start");
 elements.div.above_middle.classList.remove("start");
 elements.div.bottom.classList.remove("start");
+elements.div.scrambled.classList.remove("start");

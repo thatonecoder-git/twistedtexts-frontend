@@ -1,4 +1,5 @@
 // Import Modules
+import { audio } from "./audio_manager.js";
 import { elements } from "./elements_manager.js";
 import { addScore, getScore } from "./score_management.js";
 import { getRandomSentence_async, getSentenceByDifficulty, getWithoutSymbols, scrambleSentence, setOriginalSentenceVisibility, getCurrentSentence, setCurrentSentence, allLowerCase, getCurrentScrambledSentence, trimEach, waitingDone} from "./sentence_management.js";
@@ -84,7 +85,12 @@ function revealOrNextSentence() {
         gameRunning = false;
 
         timeTaken = (endTime-startTime)/1000;
-        isSentenceCorrect ? addScore(timeTaken, getCurrentSentence().length) : null;
+        if (isSentenceCorrect) { 
+            addScore(timeTaken, getCurrentSentence().length);
+            audio.correct_guess.play();
+        } else {
+            audio.wrong_guess.play();
+        }
     } else {
         /* Next Scrambled Sentence is Given. */
         showNextScrambledSentence_async();

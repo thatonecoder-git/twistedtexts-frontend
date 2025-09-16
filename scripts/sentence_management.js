@@ -16,7 +16,10 @@ export async function getRandomSentence_async() {
         waitingDone = true;
     }
 
-    return chooseRandom(sentencesList);
+    let randomSentence = chooseRandom(sentencesList);
+    while (!randomSentence) { randomSentence = chooseRandom(sentencesList); }
+
+    return randomSentence;
 }
 
 export function scrambleSentence(sentence) {

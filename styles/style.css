@@ -33,13 +33,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 
     height: 100vh;
     background-image: radial-gradient(circle, rgb(35,35,35), rgb(25,25,25));
 }
-
     .start {
-        scale: 0.75;
+        scale: 0.5;
+        filter: blur(100px);
     }
 
     .div-top {
@@ -122,24 +123,49 @@
             }
     
     .div-above-middle {
+        position: relative;
         transition: 1s;
-    }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100px * var(--global-scale));
+        width: max-content;
+        align-self: center;
+    }   
+        .div-logo {
+            position: absolute;
+            width: calc(100px * var(--global-scale));
+            left: calc(-80px * var(--global-scale));
+            bottom: calc(5px * var(--global-scale));
+        }
+
+        .img-logo {
+            width: 100%;
+            transition: 2s;
+        }
+
         .txt-title {
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
             font-size: calc(40px  * var(--global-scale));
             text-align: center;
             margin-top: calc(50px * var(--global-scale));
+            padding-bottom: 50px;
             color: yellow;
             text-shadow: 0 0 calc(50px * var(--global-scale)) yellow;
             font-weight: bold;
             font-style: italic;
             cursor: default;
+            z-index: 100;
             transition: 1s;
         }
 
         .txt-title:hover {
             font-size: calc(50px  * var(--global-scale));
+        }
+
+        .div-above-middle:hover .img-logo {
+            filter: blur(50px);
         }
     
     .div-middle {
@@ -155,6 +181,7 @@
             text-align: center;
             
             margin-bottom: calc(15px * var(--global-scale));
+            transition: 1s;
         }
             .txt-scrambled-sentence {
                 color: var(--red-wrong);
@@ -174,11 +201,14 @@
             .txt-original-sentence {
                 font-size: calc(0px * var(--global-scale));
                 color: var(--red-dark);
+                filter: blur(50px);
                 transition: 0.25s;
             }
 
             .txt-original-sentence-visible {
                 font-size: calc(37.5px * var(--global-scale));
+                filter: blur(0);
+                transition: 0.25s;
             }
 
             .txt-original-sentence-correct {
@@ -207,6 +237,11 @@
                 padding: calc(3px * var(--global-scale));
                 height: calc(45px * var(--global-scale));
                 font-size: calc(30px  * var(--global-scale));
+                transition: 0.5s;
+            }
+
+            .input-guess:focus {
+                box-shadow: 0px 0px calc(30px * var(--global-scale)) rgba(255,255,255, 0.35);
             }
 
             .input-guess:disabled {
@@ -264,6 +299,8 @@
             }
     
     .div-bottom {
+        position: relative;
+        bottom: calc(10px / var(--global-scale));
         display: flex;
         flex-direction: row;
         flex: 0.2;
@@ -299,6 +336,9 @@
             cursor: pointer;
             font-size: calc(18px  * var(--global-scale));
             color: var(--red-wrong);
+            border: 2px solid;
+            padding: 2px;
+            border-radius: 2px;
         }
             .div-help-tooltip {
                 position: absolute;
@@ -312,17 +352,18 @@
                 bottom: calc(30px * var(--global-scale));
                 right: 0px;
                 background-color: rgba(255, 191, 0, 0.3);
-                scale: 1.05;
+                scale: 0;
                 opacity: 0;
-                transition: 0.25s;
+                transition: 0.5s, opacity 0.75s;
             }
                 .ul-help li {
                     font-size: calc(17px * var(--global-scale));
                 }
                 
-        .div-help:active .div-help-tooltip, .div-help:hover .div-help-tooltip  {
+        .div-help:hover .div-help-tooltip  {
             opacity: 1;
             scale: 1;
+            transition: 0.2s, opacity 2s;
         }
 
 
