@@ -23,13 +23,16 @@
     --blue-glow: rgba(56, 169, 255, 0.5);
 
     --disabled-color: rgb(220, 220, 220);
+
+    --global-scale: 1;
+    --item-scale: 1;
 }
 
 * {
     margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS';
-    font-size: 27px;
+    font-size: calc(27px * var(--global-scale));
     color: var(--foreground-color);
 }
 
@@ -51,53 +54,58 @@ div {
     background-image: radial-gradient(circle, rgb(35,35,35), rgb(25,25,25));
 }
 
+    .start {
+        scale: 0.75;
+    }
+
     .div-top {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         
-        margin-top: 15px;
+        margin-top: calc(15px * var(--global-scale));
+        transition: 0.5s;
     }
         .div-share {
-            width: 90px;
-            height: 90px;
-            margin-left: 15px;
-            margin-top: 15px;
+            width: calc(90px * var(--global-scale));
+            height: calc(90px * var(--global-scale));
+            margin-left: calc(15px * var(--global-scale));
+            margin-top: calc(15px * var(--global-scale));
         }
 
         .img-share {
             width: 84%;
-            padding: 7.5px;
+            padding: calc(7.5px * var(--global-scale));
             cursor: pointer;
             transition: 0.25s;
         }
 
         .div-share:hover .img-share {
             width: 100%;
-            padding: 0px;
+            padding: calc(0px * var(--global-scale));
         }
 
         .div-share:active .img-share {
             width: 100%;
-            padding: 0px;
+            padding: calc(0px * var(--global-scale));
             filter: saturate(10);
             transition: 0.1s;
         }
 
         .div-stats {
-            margin-top: 15px;
+            margin-top: calc(15px * var(--global-scale));
         }
 
         .txt-score {
             color: var(--red-light);
             text-align: center;
-            font-size: 30px;
+            font-size: calc(30px * var(--global-scale));
         }
         .txt-timer {
             color: var(--blue-light);
             text-align: center;
-            font-size: 30px;
+            font-size: calc(30px * var(--global-scale));
         }
         .txt-timer-stopped {
             color: var(--disabled-color);
@@ -107,21 +115,21 @@ div {
             display: flex;
             justify-content: space-between;
 
-            height: 60px;
-            margin-right: 15px;
-            margin-top: 15px;
+            height: calc(60px * var(--global-scale));
+            margin-right: calc(15px * var(--global-scale));
+            margin-top: calc(15px * var(--global-scale));
         }
 
             .img-link {
                 flex: 1;
                 object-fit: contain;
 
-                width: 40px;
-                height: 40px;
-                margin: 0px 5px;
-                padding: 5px;
+                width: calc(40px * var(--global-scale));
+                height: calc(40px * var(--global-scale));
+                margin: calc(0px * var(--global-scale)) calc(5px * var(--global-scale));
+                padding: calc(5px * var(--global-scale));
                 border: 1px solid var(--foreground-color);
-                border-radius: 30px;
+                border-radius: calc(30px * var(--global-scale));
                 background-color: rgba(255, 255, 255, 0.1);
                 cursor: pointer;
                 transition: background-color 0.25s;
@@ -129,26 +137,30 @@ div {
 
             .img-link:hover {
                 background-color: rgba(255, 255, 255, 0.2);
-                border-width: 2px;
-                margin: -1px 4px;
+                border-width: calc(2px * var(--global-scale));
+                margin: calc(-1px * var(--global-scale)) calc(4px * var(--global-scale));
             }
     
-    .txt-title {
-        font-family: 'Courier New', Courier, monospace;
-        text-align: center;
-        font-size: 40px;
-        margin-top: 50px;
-        color: yellow;
-        text-shadow: 0 0 50px yellow;
-        font-weight: bold;
-        font-style: italic;
-        cursor: default;
+    .div-above-middle {
         transition: 1s;
     }
+        .txt-title {
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            font-size: calc(40px  * var(--global-scale));
+            text-align: center;
+            margin-top: calc(50px * var(--global-scale));
+            color: yellow;
+            text-shadow: 0 0 calc(50px * var(--global-scale)) yellow;
+            font-weight: bold;
+            font-style: italic;
+            cursor: default;
+            transition: 1s;
+        }
 
-    .txt-title:hover {
-        font-size: 50px;
-    }
+        .txt-title:hover {
+            font-size: calc(50px  * var(--global-scale));
+        }
     
     .div-middle {
         display: flex;
@@ -162,7 +174,7 @@ div {
             width: 90vw;
             text-align: center;
             
-            margin-bottom: 15px;
+            margin-bottom: calc(15px * var(--global-scale));
         }
             .txt-scrambled-sentence {
                 color: var(--red-wrong);
@@ -178,16 +190,16 @@ div {
             width: 90vw;
             text-align: center;
             
-            margin-bottom: 15px;
+            margin-bottom: calc(15px * var(--global-scale));
         }
             .txt-original-sentence {
-                font-size: 0px;
+                font-size: calc(0px * var(--global-scale));
                 color: var(--red-dark);
                 transition: 0.25s;
             }
 
             .txt-original-sentence-visible {
-                font-size: 37.5px;
+                font-size: calc(37.5px * var(--global-scale));
             }
 
             .txt-original-sentence-correct {
@@ -201,7 +213,7 @@ div {
             width: 90vw;
             justify-content: center;
 
-            margin-bottom: 15px;
+            margin-bottom: calc(15px * var(--global-scale));
         }
             .input-guess {
                 width: 100%;
@@ -211,11 +223,11 @@ div {
                 border: none;
                 background-color: var(--foreground-color);
                 color: var(--background-color);
-                border-radius: 15px;
-                box-shadow: 0px 0px 15px rgba(255,255,255, 0.25);
-                padding: 3px;
-                height: 45px;
-                font-size: 30px;
+                border-radius: calc(15px * var(--global-scale));
+                box-shadow: 0px 0px calc(15px * var(--global-scale)) rgba(255,255,255, 0.25);
+                padding: calc(3px * var(--global-scale));
+                height: calc(45px * var(--global-scale));
+                font-size: calc(30px  * var(--global-scale));
             }
 
             .input-guess:disabled {
@@ -240,73 +252,75 @@ div {
             width: 45vw;
             justify-content: center;
 
-            margin-bottom: 75px;
+            /*margin-bottom: 75px;*/
         }
             .btn-continue {
                 width: 90%;
                 background-color: var(--red-light);
                 color: var(--background-color);
                 border: none;
-                padding: 10.5px;
-                font-size: 34.5px;
+                padding: calc(10.5px * var(--global-scale));
+                font-size: calc(27.5px * var(--global-scale));
                 font-weight: bold;
-                border-radius: 12px;
-                box-shadow: 0px 0px 22.5px var(--red-glow);
-                margin-top: 15px;
+                border-radius: calc(12px * var(--global-scale));
+                box-shadow: 0px 0px calc(22.5px * var(--global-scale)) var(--red-glow);
+                margin-top: calc(15px * var(--global-scale));
                 cursor: pointer;
                 transition: 0.3s;
             }
 
             .btn-continue-reveal {
                 background-color: var(--blue-light);
-                box-shadow: 0px 0px 22.5px var(--blue-glow);
+                box-shadow: 0px 0px calc(22.5px * var(--global-scale)) var(--blue-glow);
             }
 
             .btn-continue:hover {
                 width: 95%;
-                margin-top: 10.5px;
-                padding: 15px;
+                margin-top: calc(10.5px * var(--global-scale));
+                padding: calc(15px * var(--global-scale));
             }
 
             .btn-continue:active {
                 width: 100%;
-                margin-top: 6px;
-                padding: 19.5px;
+                margin-top: calc(6px * var(--global-scale));
+                padding: calc(19.5px * var(--global-scale));
             }
     
     .div-bottom {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 0px 20px;
+        padding: 0px calc(20px * var(--global-scale));
 
         align-items: center;
         
-        margin-bottom: 15px;
+        transition: 0.5s;
+        /*margin-bottom: calc(15px * var(--font-scale));*/
     }   
         .a-credit {
-            font-size: 18px;
+            font-size: calc(18px  * var(--global-scale));
+            text-align: center;
         }
 
         .txt-highscore {
-            font-size: 18px;
+            font-size: calc(18px  * var(--global-scale));
         }
 
         .div-help {
             position: relative;
             cursor: pointer;
-            font-size: 18px;
+            font-size: calc(18px  * var(--global-scale));
         }
             .div-help-tooltip {
                 position: absolute;
                 width: max-content;
                 height: max-content;
-                padding: 5px;
-                padding-left: 28px;
-                padding-right: 10px;
+                padding: calc(5px * var(--global-scale));
+                padding-left: calc(28px * var(--global-scale));
+                padding-right: calc(10px * var(--global-scale));
                 border: none;
-                border-radius: 10px;
-                bottom: 30px;
+                border-radius: calc(10px * var(--global-scale));
+                bottom: calc(30px * var(--global-scale));
                 right: 0px;
                 background-color: rgba(0, 166, 255, 0.3);
                 scale: 0.9;
@@ -314,7 +328,7 @@ div {
                 transition: 0.25s;
             }
                 .ul-help li {
-                    font-size: 17px;
+                    font-size: calc(17px * var(--global-scale));
                 }
                 
         .div-help:active .div-help-tooltip, .div-help:hover .div-help-tooltip  {
@@ -323,127 +337,26 @@ div {
         }
 
 
-.div-top, .div-middle, .div-bottom {
-    /*margin-bottom: 10px;*/
+@media (max-width: 600px) {
+    :root {
+        --red-wrong: rgb(86, 255, 117);
+        --global-scale: 0.65;
+    }
+
+    .btn-continue {
+    }
 }
 
-/*
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: Tahoma;
-    font-size: 25px;
-    /*color: rgb(255, 250, 230);
+@media (min-width: 600px) and (max-width: 1024px) {
+    :root {
+        --red-wrong: rgb(86, 100, 255);
+        --global-scale: 0.85;
+    }
 }
 
-.div-game-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: aqua;
+@media (min-width: 1024px) {
+    :root {
+        --red-wrong: rgb(255, 86, 216);
+        --global-scale: 1;
+    }
 }
-
-.div-game {
-    display: flex;
-    flex: 1;
-    width: 100%;
-
-    flex-direction: column;
-    background-color: gray;
-    justify-content: center;
-}
-
-.txt-decode {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    text-align: center;
-}
-
-.txt-scrambled-sentence {
-    color: white;
-    margin: 30px 0px;
-    background-color: rgb(200, 0, 0);
-    width: max-content;
-    align-self: center;
-    padding: 0px 10px;
-    border-radius: 7px;
-    word-wrap: break-word;
-}
-
-.txt-scrambled-sentence-used {
-    color: rgb(50, 50, 50);
-    background-color: rgb(200, 200, 200);
-    padding: 0px 10px;
-    margin: 0px -10px;
-    border-radius: 3px;
-}
-
-.input-player-guess {
-    padding: 5px 10px;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    border: none;
-    box-shadow: 0px 0px 15px rgba(0,0,0, 0.3);
-    transition: 0.5s;
-}
-
-.input-player-guess:hover {
-    box-shadow: 0px 0px 5px rgba(0,0,0, 0.5);
-}
-
-.input-player-guess:focus {
-    box-shadow: 0px 0px 10px rgba(0,0,0, 0.3);
-}
-
-.btn-next-sentence {
-    padding: 10px 100px;
-    border: none;
-    border-radius: 50px;
-    font-size: 30px;
-    height: 60px;
-    background-image:
-    linear-gradient(to bottom right,
-     yellow,
-     orange,
-     red);
-    /*-background-color: rgb(255, 160, 0);
-    color: rgb(255, 250, 230);
-    align-self: center;
-    /*color: rgb(0, 0, 0);
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 30px;
-    background-size: 300%;
-    background-position: top left;
-    transition: 1s;
-}
-
-.btn-next-sentence:hover {
-    background-position: bottom right;
-}
-
-.txt-original-sentence {
-    opacity: 0;
-    font-size: 25px;
-    margin: 0px;
-    color: red;
-    transition: 0.15s;
-}
-
-.txt-original-sentence-visible {
-    font-size: 30px;
-    margin: 10px 0px;
-    opacity: 1;
-}
-
-.txt-original-sentence-correct {
-    color: green;
-}
-
-/*.txt-score {
-    text-align: start;
-}
-    */

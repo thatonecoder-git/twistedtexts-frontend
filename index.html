@@ -4,16 +4,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Test Frontend</title>
+        <title>Twisted Texts</title>
 
         <link rel="stylesheet" href="styles/style.css">
     </head>
 
     <body>
 
-        <div class="div-game">
+        <main class="div-game">
 
-            <div class="div-top">
+            <nav class="div-top start">
 
                 <div class="div-share">
                     <img class="img-share" src="resources/images/share_btn.png" alt="Share!" title="Share">
@@ -29,13 +29,13 @@
                     <a href="https://thatonecoderdev.itch.io/" target="_blank"><img class="img-link" src="resources/images/itch_icon.png" alt="YouTube @ThatOneCoder"></a>
                 </div>
 
-            </div>
+            </nav>
 
-            <div class="div-above-middle">
+            <header class="div-above-middle start">
                 <p class="txt-title">TWISTED TEXTS</p>
-            </div>
+            </header>
 
-            <div class="div-middle">
+            <section class="div-middle">
 
                 <div class="div-scrambled">
                     <p class="txt-scrambled-sentence default-text">loading sentence...</p>
@@ -49,17 +49,17 @@
                     <input class="input-guess default-text" placeholder="Unscramble the sentence">
                 </div>
 
-            </div>
+            </section>
 
-            <div class="div-below-middle">
+            <section class="div-below-middle">
 
                 <div class="div-continue">
                     <button class="btn-continue">Next Sentence</button>
                 </div>
 
-            </div>
+            </section>
 
-            <div class="div-bottom">
+            <footer class="div-bottom">
                 <div class="div-highscore">
                     <p class="txt-highscore">Highscore: ...</p>
                 </div>
@@ -68,7 +68,7 @@
                     <a href="https://www.youtube.com/@ThatOneCoderYT" target="_blank" class="a-credit">@ThatOneCoder</a>
                 </div>
 
-                <div class="div-help">
+                <article class="div-help">
                     <div class="div-help-tooltip">
                         <ul class="ul-help">
                             <li>Full-Stop Word = Last Word</li>
@@ -82,10 +82,10 @@
                     </div>
 
                     Help
-                </div>
-            </div>
+                </article>
+            </footer>
 
-        </div>
+        </main>
         
         <script type="module" src="scripts/index.js"></script>
         <script type="module" src="scripts/gameplay.js"></script>

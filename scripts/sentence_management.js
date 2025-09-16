@@ -106,6 +106,15 @@ export function allLowerCase(wordset) {
     });
 }
 
+export function trimEach(wordset) {
+    let new_wordset = [];
+
+    wordset.split(' ').forEach(word => {
+        if (word.length > 0) new_wordset.push(word.trim());
+    });
+
+    return new_wordset.join(' ');
+}
 
 export function hasEndingSymbol(sentence) {
     const ending_symbols = "?!.";

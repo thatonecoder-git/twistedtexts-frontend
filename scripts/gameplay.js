@@ -1,7 +1,7 @@
 // Import Modules
 import { elements } from "./elements_manager.js";
 import { addScore, getScore } from "./score_management.js";
-import { getRandomSentence_async, getSentenceByDifficulty, getWithoutSymbols, scrambleSentence, setOriginalSentenceVisibility, getCurrentSentence, setCurrentSentence, allLowerCase, getCurrentScrambledSentence} from "./sentence_management.js";
+import { getRandomSentence_async, getSentenceByDifficulty, getWithoutSymbols, scrambleSentence, setOriginalSentenceVisibility, getCurrentSentence, setCurrentSentence, allLowerCase, getCurrentScrambledSentence, trimEach} from "./sentence_management.js";
 import { copyToClipboard, shareInfo } from "./tools.js";
 
 // Creating Variables
@@ -103,7 +103,8 @@ function revealOrNextSentence() {
 }
 
 function checkSentence() {
-    getWithoutSymbols(getCurrentSentence().trim().toLowerCase()) !== getWithoutSymbols(elements.input.guess.value.toLowerCase()) ? 
+    console.log(trimEach(elements.input.guess.value));
+    getWithoutSymbols(getCurrentSentence().trim().toLowerCase()) !== getWithoutSymbols(trimEach(elements.input.guess.value).toLowerCase()) ? 
         isSentenceCorrect = false : 
         isSentenceCorrect = true;
 
